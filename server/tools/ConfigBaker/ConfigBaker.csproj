@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>ConfigBaker</AssemblyName>
+    <RootNamespace>ConfigBaker</RootNamespace>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Suppress analyzer noise in tool code -->
+    <NoWarn>1701;1702;1591;CS0628;CS0162</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Reference logic (but NOT the Roslyn analyzer so it doesn't flag tool code) -->
+    <ProjectReference Include="..\..\src\MOBA.Logic\MOBA.Logic.csproj"
+                      ExcludeAssets="analyzers" />
+  </ItemGroup>
+
+</Project>

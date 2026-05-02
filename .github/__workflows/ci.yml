@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  determinism-tests:
+    name: Determinism tests (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        working-directory: server
+        run: dotnet restore test/MOBA.Logic.Tests/MOBA.Logic.Tests.csproj
+
+      - name: Build
+        working-directory: server
+        run: dotnet build test/MOBA.Logic.Tests/MOBA.Logic.Tests.csproj -c Release --no-restore
+
+      # Runs: S0.1 S0.2 S0.3, M1 M2 M4, M5.1–M5.6, MConfig, §9.3 CrossPlat(100 replays)
+      # Skips: S0.4 (300 s KCP jitter), M3/MSV1–3/MC2–3 (live KCP network tests)
+      - name: Run CI test suite
+        working-directory: server
+        run: dotnet run --project test/MOBA.Logic.Tests/MOBA.Logic.Tests.csproj -c Release --no-build -- ci
+
+      - name: Upload platform hash artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crossplat-hash-${{ matrix.os }}
+          path: server/test/MOBA.Logic.Tests/bin/Release/net8.0/MCrossPlat_*.txt
+          if-no-files-found: warn
+
+  compare-hashes:
+    name: Verify cross-platform hash parity
+    needs: determinism-tests
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Download Windows hash
+        uses: actions/download-artifact@v4
+        with:
+          name: crossplat-hash-windows-latest
+          path: hashes/windows
+
+      - name: Download Linux hash
+        uses: actions/download-artifact@v4
+        with:
+          name: crossplat-hash-ubuntu-latest
+          path: hashes/linux
+
+      - name: Compare hashes
+        shell: bash
+        run: |
+          win_hash=$(cat hashes/windows/MCrossPlat_*.txt | tr -d '[:space:]')
+          lin_hash=$(cat hashes/linux/MCrossPlat_*.txt | tr -d '[:space:]')
+          echo "Windows : $win_hash"
+          echo "Linux   : $lin_hash"
+          if [ "$win_hash" = "$lin_hash" ]; then
+            echo "PASS Cross-platform hashes match"
+          else
+            echo "FAIL Windows/Linux hash mismatch"
+            exit 1
+          fi

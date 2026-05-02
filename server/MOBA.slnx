@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MOBA.Analyzers/MOBA.Analyzers.csproj" />
+    <Project Path="src/MOBA.Logic/MOBA.Logic.csproj" />
+    <Project Path="src/MOBA.Net/MOBA.Net.csproj" />
+    <Project Path="src/MOBA.Server/MOBA.Server.csproj" />
+    <Project Path="src/MOBA.ServerHost/MOBA.ServerHost.csproj" />
+    <Project Path="src/MOBA.Shared/MOBA.Shared.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/MOBA.Logic.Tests/MOBA.Logic.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/ConfigBaker/ConfigBaker.csproj" />
+  </Folder>
+</Solution>

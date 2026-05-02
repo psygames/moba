@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MOBA.ServerHost</RootNamespace>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <AssemblyName>moba-server</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MOBA.Server\MOBA.Server.csproj" />
+    <ProjectReference Include="..\MOBA.Shared\MOBA.Shared.csproj" />
+    <ProjectReference Include="..\MOBA.Logic\MOBA.Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

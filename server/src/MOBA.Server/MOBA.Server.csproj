@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MOBA.Server</RootNamespace>
+    <NoWarn>1701;1702;1591;CS0162;CS0168;CS0219</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MOBA.Shared\MOBA.Shared.csproj" />
+    <ProjectReference Include="..\MOBA.Net\MOBA.Net.csproj" />
+    <ProjectReference Include="..\MOBA.Logic\MOBA.Logic.csproj" />
+  </ItemGroup>
+
+</Project>

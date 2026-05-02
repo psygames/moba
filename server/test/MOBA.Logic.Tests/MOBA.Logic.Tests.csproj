@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MOBA.Shared\MOBA.Shared.csproj" />
+    <ProjectReference Include="..\..\src\MOBA.Net\MOBA.Net.csproj" />
+    <ProjectReference Include="..\..\src\MOBA.Logic\MOBA.Logic.csproj" />
+    <ProjectReference Include="..\..\src\MOBA.Server\MOBA.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="S0_1_baseline.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="S0_2_baseline.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="S0_3_baseline.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MCrossPlat_baseline.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
