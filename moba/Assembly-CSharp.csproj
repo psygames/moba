@@ -415,6 +415,10 @@
       <HintPath>Assets\Plugins\NuGet\Microsoft.Extensions.Logging.Abstractions.8.0.3\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Hashing">
+      <HintPath>Assets\Plugins\MOBA\System.IO.Hashing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.SignalR.Client.Core">
       <HintPath>Assets\Plugins\NuGet\Microsoft.AspNetCore.SignalR.Client.Core.8.0.15\Microsoft.AspNetCore.SignalR.Client.Core.dll</HintPath>
       <Private>False</Private>
@@ -441,6 +445,10 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
       <HintPath>Assets\Plugins\NuGet\Microsoft.Extensions.Hosting.Abstractions.8.0.1\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MOBA.Shared">
+      <HintPath>Assets\Plugins\MOBA\MOBA.Shared.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Annotations">
@@ -511,6 +519,10 @@
       <HintPath>Assets\Plugins\NuGet\System.Runtime.CompilerServices.Unsafe.6.1.2\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="MOBA.Net">
+      <HintPath>Assets\Plugins\MOBA\MOBA.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.IO.Pipelines">
       <HintPath>Assets\Plugins\NuGet\System.IO.Pipelines.8.0.0\System.IO.Pipelines.dll</HintPath>
       <Private>False</Private>
@@ -529,6 +541,10 @@
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Connections.Abstractions">
       <HintPath>Assets\Plugins\NuGet\Microsoft.AspNetCore.Connections.Abstractions.8.0.15\Microsoft.AspNetCore.Connections.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MOBA.Logic">
+      <HintPath>Assets\Plugins\MOBA\MOBA.Logic.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Bcl.Memory">
@@ -553,22 +569,6 @@
     </Reference>
     <Reference Include="System.Collections.Immutable">
       <HintPath>Assets\Plugins\NuGet\System.Collections.Immutable.7.0.0\System.Collections.Immutable.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MOBA.Logic">
-      <HintPath>Assets\Plugins\MOBA\MOBA.Logic.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MOBA.Shared">
-      <HintPath>Assets\Plugins\MOBA\MOBA.Shared.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.IO.Hashing">
-      <HintPath>Assets\Plugins\MOBA\System.IO.Hashing.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MOBA.Net">
-      <HintPath>Assets\Plugins\MOBA\MOBA.Net.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
